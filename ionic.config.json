@@ -1,0 +1,7 @@
+{
+  "name": "miserviuapt",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
