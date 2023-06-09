@@ -1,0 +1,77 @@
+<ion-header>
+ 
+</ion-header>
+
+<ion-content mode="ios">
+ 
+  <div class="container">
+
+    <ion-list lines="none">
+
+    <ion-item mode="ios">
+      <ion-input class="custom-input" type="number" placeholder="Número cuenta" [(ngModel)]="numeroCuenta"></ion-input>
+    </ion-item>
+
+    <ion-item mode="ios">
+      <ion-input class="custom-input" type="text" placeholder="Nombre" [(ngModel)]="Nombre_alumno"></ion-input>
+    </ion-item>
+    
+    <ion-item mode="ios">
+      <ion-input class="custom-input" type="text" placeholder="Apellido Paterno" [(ngModel)]="AP_alumno"></ion-input>
+    </ion-item>
+
+    <ion-item mode="ios">
+      <ion-input class="custom-input" type="text" placeholder="Apellido Materno" [(ngModel)]="AM_alumno"></ion-input>
+    </ion-item>
+
+    <ion-list class="custom-list">
+      <ion-item>
+        <ion-select placeholder="Seleccionar" class="custom-input" [(ngModel)]="Prac_Ser">
+          <ion-select-option  *ngFor="let option of options" [value]="option.Id">{{ option.rol }}</ion-select-option>
+
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
+    <ion-list class="custom-list">
+      <ion-item>
+        <ion-select placeholder="Seleccionar carrera" class="custom-input" [(ngModel)]="carrera">
+          <ion-select-option  *ngFor="let option of optionC" [value]="option.Id">{{ option.carrera }}</ion-select-option>
+
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list class="custom-list">
+      <ion-item>
+        <ion-select placeholder="Seleccionar semestre" class="custom-input" [(ngModel)]="semestre">
+          <ion-select-option  *ngFor="let option of optionS" [value]="option.Id">{{ option.semestre }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+
+    <ion-list class="custom-list">
+      <ion-item>
+        <ion-select placeholder="Docente asignado" class="custom-input" [(ngModel)]="id_prof">
+          <ion-select-option  *ngFor="let option of optionp" [value]="option.numeroEmpleado">{{option.Nombre + " " + option.ApellidoPaterno + " " + option.ApellidoMaterno}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+
+    <ion-item mode="ios">
+      <ion-input class="custom-input" type="email" placeholder="Correo Institucional" [(ngModel)]="correo"></ion-input>
+    </ion-item>
+
+    <ion-item mode="ios">
+      <ion-input class="custom-input" [type]="passwordType" placeholder="Contraseña" [(ngModel)]="password"></ion-input>
+      <ion-icon name="eye" slot="end" [color]="passwordShown === true ? 'dark' : ''" (click)="togglePassword()"></ion-icon>
+
+
+    </ion-item>
+    </ion-list>
+    <ion-button class="btn-registro" (click)="registrarUsuario()" mode="ios">Registrarte</ion-button>
+
+  </div>
+</ion-content>

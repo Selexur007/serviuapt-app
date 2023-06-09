@@ -1,0 +1,49 @@
+ion-content {
+  --background: #F8F9F9;
+
+}
+
+ion-header::after {
+  display: none;
+
+}
+
+ion-toolbar {
+  --background: #F8F9F9;
+
+}
+
+ion-title{
+  margin-top: 15px;
+  margin-left: 15px;
+  font-size: 34px;
+  font-weight: bold;
+  color: black;
+}
+
+ion-datetime{
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 7px;
+  --background:#F8F9F9;
+}
+
+ion-content{
+  --bakcground: linear-gradient(to top right, #F57189 0%, #2785de 100%);
+}
+
+
+.btn-registro{
+  --background: #9C8412;
+  margin-left: 5%;
+  width: 90%;
+  font-family:'Montserrat',sans-serif;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+.view-time{
+  margin-left: 6%;
+
+}

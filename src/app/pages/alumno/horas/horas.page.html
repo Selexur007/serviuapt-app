@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Horas</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-datetime locale="es-MX" hourCycle="H" displayFormat="DD/MM/YYYY" pickerFormat="DD MMM YYYY" [min]="today" max="2050" [(ngModel)]="selectedDateTime" (ionChange)="handleDateTimeChange($event)"></ion-datetime>
+
+  <ion-input class="view-time" type="text" [value]="selectedDate" [(ngModel)]="Fecha_entrada" readonly></ion-input>
+  <ion-input class="view-time" type="text" [value]="selectedTime" [(ngModel)]="Hora_entrada" readonly></ion-input>
+  
+  <ion-button class="btn-registro" mode="ios" (click)="registrarHoras()">
+    Enviar
+  </ion-button>  
+  <ion-list>
+    <ion-card mode="ios">
+      <ion-card-header>
+        <ion-card-title>Card Title</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+    </ion-card>
+    <ion-card mode="ios">
+      <ion-card-header>
+        <ion-card-title>Card Title</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+    </ion-card>
+    <ion-card mode="ios">
+      <ion-card-header>
+        <ion-card-title>Card Title</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

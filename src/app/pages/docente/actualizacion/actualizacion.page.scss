@@ -1,0 +1,32 @@
+ion-content{
+  --background:#F8F9F9;
+
+}
+ion-item{
+  --background: white;
+
+}
+
+ion-header::after {
+  display: none;
+
+}
+
+ion-toolbar {
+  --background: #F8F9F9;
+
+}
+
+
+ion-title{
+  margin-top: 15px;
+  margin-left: 15px;
+  font-size: 34px;
+  font-weight: bold;
+  color: black;
+}
+
+.alumnos{
+
+  --background:#F8F9F9;
+}

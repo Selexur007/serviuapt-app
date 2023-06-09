@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="logo">
+    <img src="assets/logo1.png" alt="">
+  </div>
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col col-6>
+        <ion-card class="card-medium" (click)="setOpen(true)" mode="ios" routerLink="/registro-docente">
+          <ion-card-header>
+            <img src="assets/Docente.png" alt="">
+            <ion-card-title>Docente</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-card class="card-medium" id="open-modal" mode="ios" routerLink="/registro-alumno">
+          <ion-card-header>
+            <img src="assets/Manager.png" alt="">
+            <ion-card-title>Alumno</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="registro" routerLink="../home">
+    <p>¿Ya tienes una cuenta? Inicia sesión</p>
+  </div>
+
+</ion-content>

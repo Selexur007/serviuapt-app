@@ -1,0 +1,28 @@
+ion-toolbar{
+  --background: #2C5234; /* Reemplaza #ff0000 con el color que desees */
+  --border-width: 0;
+
+}
+
+ion-content{
+  --background:#F8F9F9;
+
+}
+
+ion-header::after {
+  display: none;
+
+}
+
+ion-toolbar {
+  --background: #F8F9F9;
+
+}
+
+ion-title{
+  margin-top: 15px;
+  margin-left: 15px;
+  font-size: 34px;
+  font-weight: bold;
+  color: black;
+}

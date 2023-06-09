@@ -1,0 +1,95 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actualización</ion-title>
+  </ion-toolbar>
+  <ion-toolbar mode="ios">
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <div>
+    <ion-list lines="none">
+      <ion-item>
+        
+      </ion-item>
+      
+      <ion-item class="alumnos" *ngFor="let option of options">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{option.Nombre_alumno}} {{option.AP_alumno}}  {{option.AM_alumno}}</ion-card-title>
+            <ion-card-subtitle>Numero Cuenta {{option.numeroCuenta}}</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <h2>Detalles del alumno</h2>
+            <hr>
+           <h2>{{option.licenciatura}}  </h2>
+           <h2> {{option.semestre}} </h2>
+           <h2>{{option.Prac_Ser}} </h2>
+          </ion-card-content>
+          <ion-button id="open-modal" (click)="actualizarAlumno(option.id_alumno)">Editar</ion-button>
+
+          <ion-button  color="danger" (click)="deleteAlumno(option.id_alumno)">Eliminar</ion-button>
+
+          <ion-modal [isOpen]="alumnoId === option.id_alumno" (willDismiss)="onWillDismiss($event)">
+
+            <ng-template>
+              <ion-header>
+                <ion-toolbar>
+                  <ion-buttons slot="start">
+                    <ion-button (click)="cancel()">Cancel</ion-button>
+                  </ion-buttons>
+                  <ion-buttons slot="end">
+                    <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content class="ion-padding">
+                <ion-item>
+                  <ion-label position="stacked">Número cuenta</ion-label>
+                  <ion-input type="text" placeholder="Número cuenta" [(ngModel)]="numeroCuenta"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="stacked">Nombre</ion-label>
+                  <ion-input type="text" placeholder="Nombre" [(ngModel)]="Nombre_alumno"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="stacked">Apellido Paterno</ion-label>
+                  <ion-input type="text" placeholder="Apellido Paterno" [(ngModel)]="AP_alumno"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="stacked">Apellido Materno</ion-label>
+                  <ion-input type="text" placeholder="Apellido Materno" [(ngModel)]="AM_alumno"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="stacked">Practicas o Servicio</ion-label>
+                  <ion-input type="text" placeholder="Practicas o Servicio" [(ngModel)]="Prac_Ser"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="stacked">Carrera</ion-label>
+                  <ion-input type="text" placeholder="Carrera" [(ngModel)]="carrera"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="stacked">Semestre</ion-label>
+                  <ion-input type="text" placeholder="Semestre" [(ngModel)]="semestre"></ion-input>
+                </ion-item>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

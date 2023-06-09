@@ -1,0 +1,41 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Consulta</ion-title>
+  </ion-toolbar>
+  <ion-toolbar mode="ios">
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div>
+    <ion-list lines="none">
+      <ion-item>
+        
+      </ion-item>
+      
+      <ion-item class="alumnos" *ngFor="let option of options">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{option.Nombre_alumno}} {{option.AP_alumno}}  {{option.AM_alumno}}</ion-card-title>
+            <ion-card-subtitle>Numero Cuenta {{option.numeroCuenta}}</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <h2>Detalles del alumno</h2>
+            <hr>
+           <h2>{{option.licenciatura}}  </h2>
+           <h2> {{option.semestre}} </h2>
+           <h2>{{option.Prac_Ser}} </h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+      
+    </ion-list>
+  </div>
+</ion-content>
